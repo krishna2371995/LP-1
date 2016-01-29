@@ -16,10 +16,18 @@ switch|typedef|union|unsigned|void|volatile|while|printf|scanf		printf("%s \t KE
 [<>!](=)?				printf("%s \t RELATIONAL OP\n",yytext);
 ==						printf("%s \t RELATIONAL OP\n",yytext);
 =						printf("%s \t ASSIGNMENT OP\n",yytext);
+<<<<<<< HEAD
+\-\- | ++		printf("%s \t ARITHMATIC OP\n",yytext);
+[+\-*/](=)?			printf("%s \t ARITHMATIC OP\n",yytext);
+(\(|\)|\[|\]|\{|\})		printf("%s \t PAREN \n",yytext);
+\"(.|\n)*\" 	 				printf("%s \t STRING \n",yytext);
+\/\*(.|\n)*\*\/|\/\/.*$				printf("%s \t COMMENT \n",yytext);
+=======
 [+\-*/](=)?			printf("%s \t ARITHMATIC OP\n",yytext);
 (\(|\)|\[|\]|\{|\})		printf("%s \t PAREN \n",yytext);
 \".*\" 	 				printf("%s \t STRING \n",yytext);
 \/\*.*\*\/|\/\/.*$				printf("%s \t COMMENT \n",yytext);
+>>>>>>> b6825b6da1d91d1240a442b7bb459a4f1259af2d
 ,						printf("%s \t COMMA \n",yytext);
 [~&\|^]|(\&\&)|(\|\|)	printf("%s \t LOGICAL OP \n",yytext);
 .  				ECHO;
